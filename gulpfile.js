@@ -1,0 +1,237 @@
+// generated on 2018-10-04 using generator-webapp 3.0.1
+const gulp = require('gulp');
+const gulpLoadPlugins = require('gulp-load-plugins');
+const browserSync = require('browser-sync').create();
+const del = require('del');
+const wiredep = require('wiredep').stream;
+const runSequence = require('run-sequence');
+
+const fileinclude = require('gulp-file-include');
+
+const $ = gulpLoadPlugins();
+const reload = browserSync.reload;
+const git = require('gulp-git');
+
+let dev = true;
+
+gulp.task('styles', () => {
+  return gulp.src('app/styles/*.scss')
+    .pipe($.plumber())
+    .pipe($.if(dev, $.sourcemaps.init()))
+    .pipe($.sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['.']
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
+    .pipe($.if(dev, $.sourcemaps.write()))
+    .pipe(gulp.dest('.tmp/styles'))
+    .pipe(reload({ stream: true }));
+});
+
+gulp.task('scripts', () => {
+  return gulp.src('app/scripts/**/*.js')
+    .pipe($.plumber())
+    .pipe($.if(dev, $.sourcemaps.init()))
+    .pipe($.babel())
+    .pipe($.if(dev, $.sourcemaps.write('.')))
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe(reload({ stream: true }));
+});
+
+function lint(files) {
+  return gulp.src(files)
+    .pipe($.eslint({ fix: true }))
+    .pipe(reload({ stream: true, once: true }))
+    .pipe($.eslint.format())
+    .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
+}
+
+gulp.task('lint', () => {
+  return lint('app/scripts/**/*.js')
+    .pipe(gulp.dest('app/scripts'));
+});
+gulp.task('lint:test', () => {
+  return lint('test/spec/**/*.js')
+    .pipe(gulp.dest('test/spec'));
+});
+
+gulp.task('pre-html', () => {
+  return gulp.src('app/**/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('./.tmp/'));
+});
+
+gulp.task('html', ['pre-html', 'styles', 'scripts'], () => {
+  return gulp.src('./.tmp/**/*.html')
+    .pipe($.useref({ searchPath: ['.tmp', '.'] }))
+    // .pipe($.if(/\.js$/, $.uglify({ compress: { drop_console: true } })))
+    .pipe($.if(/\.css$/, $.cssnano({ safe: false, autoprefixer: true })))
+    .pipe($.if(/\.html$/, $.htmlmin({
+      collapseWhitespace: true,
+      minifyCSS: false,
+      minifyJS: { compress: { drop_console: true } },
+      processConditionalComments: true,
+      removeComments: true,
+      removeEmptyAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true
+    })))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('images', () => {
+  return gulp.src('app/images/**/*')
+    .pipe($.cache($.imagemin()))
+    .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('fonts', () => {
+  return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {
+  })
+    .concat('app/fonts/**/*'))
+    .pipe($.if(dev, gulp.dest('.tmp/fonts'), gulp.dest('dist/fonts')));
+});
+
+gulp.task('extras', () => {
+  return gulp.src([
+    'app/*',
+    'app/**/*.html',
+    '!app/*.html'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist'));
+});
+
+gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+
+gulp.task('serve', () => {
+  runSequence(['clean', 'wiredep'], ['pre-html', 'styles', 'scripts', 'fonts'], () => {
+    browserSync.init({
+      notify: false,
+      port: 9000,
+      server: {
+        baseDir: ['.tmp', 'app'],
+        routes: {
+          '/bower_components': 'bower_components'
+        }
+      }
+    });
+
+    gulp.watch([
+      '.tmp/**/*.html',
+      'app/images/**/*',
+      '.tmp/fonts/**/*'
+    ]).on('change', reload);
+
+    gulp.watch('app/styles/**/*.scss', ['styles']);
+    gulp.watch('app/scripts/**/*.js', ['scripts']);
+    gulp.watch('app/fonts/**/*', ['fonts']);
+    gulp.watch('app/**/*.html', ['pre-html']);
+    gulp.watch('bower.json', ['wiredep', 'fonts']);
+  });
+});
+
+// gulp.task('serve:dist', ['pre-html', 'styles', 'scripts', 'images'], () => {
+//   return gulp.src('.tmp/**/*.html')
+//     .pipe($.if(/\.css$/, $.cssnano({safe: true, autoprefixer: false})))
+//     .pipe($.if(/\.html$/, $.htmlmin({
+//       collapseWhitespace: true,
+//       minifyCSS: true,
+//       minifyJS: {compress: {drop_console: true}},
+//       processConditionalComments: true,
+//       removeComments: true,
+//       removeEmptyAttributes: true,
+//       removeScriptTypeAttributes: true,
+//       removeStyleLinkTypeAttributes: true
+//     })))
+//     .pipe(gulp.dest('dist'));
+// });
+
+gulp.task('serve:dist', ['default'], () => {
+  browserSync.init({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['dist']
+    }
+  });
+});
+
+gulp.task('serve:test', ['scripts'], () => {
+  browserSync.init({
+    notify: false,
+    port: 9000,
+    ui: false,
+    server: {
+      baseDir: 'test',
+      routes: {
+        '/scripts': '.tmp/scripts',
+        '/bower_components': 'bower_components'
+      }
+    }
+  });
+
+  gulp.watch('app/scripts/**/*.js', ['scripts']);
+  gulp.watch(['test/spec/**/*.js', 'test/index.html']).on('change', reload);
+  gulp.watch('test/spec/**/*.js', ['lint:test']);
+});
+
+// inject bower components
+gulp.task('wiredep', () => {
+  gulp.src('app/styles/*.scss')
+    .pipe($.filter(file => file.stat && file.stat.size))
+    .pipe(wiredep({
+      ignorePath: /^(\.\.\/)+/
+    }))
+    .pipe(gulp.dest('app/styles'));
+
+  gulp.src('app/*.html')
+    .pipe(wiredep({
+      exclude: ['bootstrap'],
+      ignorePath: /^(\.\.\/)*\.\./
+    }))
+    .pipe(gulp.dest('app'));
+});
+
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+  return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
+});
+
+gulp.task('default', () => {
+  return new Promise(resolve => {
+    dev = false;
+    runSequence(['clean', 'wiredep'], 'build', 'pre-deploy', resolve);
+  });
+});
+
+
+// src is the file(s) to add (or ./*)
+gulp.task('add', function () {
+  const dir = './public';
+  return gulp.src('./public/*')
+    .pipe(git.add({ 'cwd': dir })
+    );
+});
+
+gulp.task('commit', function () {
+  const dir = './public';
+  return gulp.src('./public/*')
+    .pipe(git.commit("New version", { 'cwd': dir }));
+});
+
+gulp.task('pre-deploy', [], () => {
+  return gulp.src('dist/**/*', { nodir: true }).pipe(gulp.dest('public'))
+
+});
+
+gulp.task('push', ['pre-deploy', 'add', 'commit'], () => {
+  const dir = './public';
+  return git.push('heroku', 'master', { 'cwd': dir }, function (err) {
+    if (err) throw err;
+  });
+});
+

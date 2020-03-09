@@ -1,0 +1,101 @@
+<div class="page-map">
+	<div class="page-map-header">
+		<!-- timeline in 24 hours -->
+		<div class="timeline mt-auto">
+			<div class="timeline-holder">
+				<div class="timeline-design">
+					<div class="line line-long">
+						<span>1 AM</span>
+					</div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-long">
+						<span>6 AM</span>
+					</div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-long">
+						<span>12 PM</span>
+					</div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-long">
+						<span>18 PM</span>
+					</div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-short"></div>
+					<div class="line line-long">
+						<span>00 PM</span>
+					</div>
+					<div class="line line-short"></div>
+				</div>
+				<div class="curent-time" style="left: 20%;"></div>
+				<div class="curent-time" style="left: 34%;"></div>
+				<div class="curent-time active" style="left: 77%;"></div>
+			</div>
+		</div>
+
+		<div class="time-control">
+			<!-- Swiper -->
+		  	<div class="swiper-days">
+			    <div class="swiper-wrapper">
+			      <div class="swiper-slide">
+			      	<p class="day">18</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			      <div class="swiper-slide">
+			      	<p class="day">19</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			      <div class="swiper-slide">
+			      	<p class="day">20</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			      <div class="swiper-slide">
+			      	<p class="day">21</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			      <div class="swiper-slide">
+			      	<p class="day">22</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			      <div class="swiper-slide">
+			      	<p class="day">23</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			      <div class="swiper-slide">
+			      	<p class="day">24</p>
+			      	<p class="month">Oct</p>
+			      </div>
+			    </div>
+				<!-- Add Pagination -->
+			    <!-- Add Arrows -->
+			    <div class="swiper-days-control">
+			    	 <div class="swiper-prev">
+			    	 	<svg id="SVGDoc" width="8" height="12" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 12"><defs></defs><path d="M6.29259,0.28561l1.4142,1.41556l-4.29346,4.29265l4.29346,4.29309l-1.4142,1.41346l-6.00004,-6.00057l1.4142,-1.41241l0.29254,0.29251z" fill="#e6e6e6" fill-opacity="1"></path></g></g></svg>
+				    </div>
+				    <div class="swiper-next">
+						<svg id="SVGDoc" width="8" height="12" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 8 12"><defs></defs><path d="M0.29258,1.70117l1.4142,-1.41556l4.29325,4.29425l0.29249,-0.29247l1.4143,1.41241l-6.00004,6.00057l-1.4142,-1.41346l4.29343,-4.29312z" fill="#e6e6e6" fill-opacity="1"></path></g></g></svg>
+				    </div>
+			    </div>
+			</div>
+		</div>
+		<button class="btn btn-secondary ml-3">Next Day</button>
+	</div>
+	<div class="map-search input-group">
+		<div class="input-group-prepend">
+			<img src="images/ico-search.svg" alt="">
+		</div>
+		<input type="text" class="form-control" placeholder="Search on map...">
+	</div>
+	<div class="map-wrap"></div>
+	@@include('includes/filter_map.html')
+</div>

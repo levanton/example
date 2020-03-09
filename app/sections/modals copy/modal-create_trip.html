@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-create_trip" tabindex="-1" role="dialog" aria-labelledby="Create a Trip" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="">Create a Trip</h5>
+        <button type="button" class="btn btn-transparent ml-auto" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-primary ml-4">Next Step</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="direction">What you want to call your trip?</label>
+            <input type="text" class="form-control" id="direction" placeholder="From Moroco to Japan in 16 Days">
+          </div>
+          <div class="form-group">
+            <label for="description">Trip plan description?</label>
+            <textarea class="form-control" id="description" rows="3" placeholder="What’s your trip is all about?"></textarea>
+          </div>
+          <div class="form-group">
+
+            <label for="trip_type">What’s your trip plan type?</label>
+
+            <div class="group-radio-form d-flex w-100">
+              <div class="custom-control custom-radio custom-control-inline w-50" style="margin-right: 16px;" checked>
+                <input type="radio" id="planTrip1" name="planTrip" class="custom-control-input">
+                <label class="custom-control-label" for="planTrip1">Upcoming Trip</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline w-50">
+                <input type="radio" id="planTrip2" name="planTrip" class="custom-control-input">
+                <label class="custom-control-label" for="planTrip2">Memory Trip</label>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group mb-0">
+            <label for="privacy">Privacy options</label>
+            <p class="help-info">You decide who can see your trip plan, you can changed this at any time.</p>
+
+            @@include('../includes/privacy_select.html')   
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

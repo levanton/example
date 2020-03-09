@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4080ff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="upvote" class="cls-1" d="M650.5,2403a12.5,12.5,0,1,1-12.5,12.5A12.5,12.5,0,0,1,650.5,2403Zm-3.891,15.79L645,2417.07l5.548-5.88,1.607,1.73Zm7.782,0,1.607-1.72-5.547-5.88-1.608,1.73Z" transform="translate(-638 -2403)"/>
+</svg>

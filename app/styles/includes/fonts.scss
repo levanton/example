@@ -1,0 +1,54 @@
+@font-face {
+  font-family: CircularStd;
+  font-weight: 400;
+  font-style: normal;
+  // src: url(../fonts/CircularStd-Book/CircularStd-Book.woff) format("woff");
+  src: url("../fonts/CircularStd-Book/CircularStd-Book.eot?") format("eot"),
+       url("../fonts/CircularStd-Book/CircularStd-Book.woff2") format("woff2"),
+       url("../fonts/CircularStd-Book/CircularStd-Book.woff") format("woff"),
+       url("../fonts/CircularStd-Book/CircularStd-Book.ttf") format("truetype"),
+       url("../fonts/CircularStd-Book/CircularStd-Book.svg#Samplina_Neue") format("svg");
+}
+@font-face {
+  font-family: CircularStd;
+  font-weight: 500;
+  font-style: normal;
+  // src: url(../fonts/CircularStd-Medium/CircularStd-Medium.woff) format("woff");
+  src: url("../fonts/CircularStd-Medium/CircularStd-Medium.eot?") format("eot"),
+       url("../fonts/CircularStd-Medium/CircularStd-Medium.woff") format("woff"),
+       url("../fonts/CircularStd-Medium/CircularStd-Medium.ttf") format("truetype"),
+       url("../fonts/CircularStd-Medium/CircularStd-Medium.svg#Samplina_Neue") format("svg");
+}
+@font-face {
+  font-family: CircularStd;
+  font-weight: 700;
+  font-style: normal;
+  // src: url(../fonts/CircularStd-Bold/CircularStd-Bold.woff) format("woff");
+  src: url("../fonts/CircularStd-Bold/CircularStd-Bold.eot?") format("eot"),
+       url("../fonts/CircularStd-Bold/CircularStd-Bold.woff2") format("woff2"),
+       url("../fonts/CircularStd-Bold/CircularStd-Bold.woff") format("woff"),
+       url("../fonts/CircularStd-Bold/CircularStd-Bold.ttf") format("truetype"),
+       url("../fonts/CircularStd-Bold/CircularStd-Bold.svg#Samplina_Neue") format("svg");
+}
+
+@font-face {
+  font-family: CircularAirPro;
+  font-weight: 300;
+  font-style: normal;
+  // src: url(../fonts/CircularAirPro-Light/CircularAirPro-Light.woff) format("woff");
+  src: url("../fonts/CircularAirPro-Light/CircularAirPro-Light.eot?") format("eot"),
+       url("../fonts/CircularAirPro-Light/CircularAirPro-Light.woff") format("woff"),
+       url("../fonts/CircularAirPro-Light/CircularAirPro-Light.ttf") format("truetype"),
+       url("../fonts/CircularAirPro-Light/CircularAirPro-Light.svg#Samplina_Neue") format("svg");
+}
+
+@font-face {
+  font-family: HacenLebanon;
+  font-weight: 300;
+  font-style: normal;
+  // src: url(../fonts/HacenLebanon/HacenLebanon.woff) format("woff");
+  src: url("../fonts/HacenLebanon/HacenLebanon.eot?") format("eot"),
+       url("../fonts/HacenLebanon/HacenLebanon.woff") format("woff"),
+       url("../fonts/HacenLebanon/HacenLebanon.ttf") format("truetype"),
+       url("../fonts/HacenLebanon/HacenLebanon.svg#Samplina_Neue") format("svg");
+}

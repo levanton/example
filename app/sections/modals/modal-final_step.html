@@ -1,0 +1,80 @@
+<!-- Modal -->
+<div class="modal fade" id="modal-final_step" tabindex="-1" role="dialog" aria-labelledby="Edit" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="">Summary</h5>
+        <button type="button" class="btn btn-color-gray ml-auto" data-dismiss="modal">SAVE DRAFT</button>
+        <button type="button" class="btn btn-primary ml-4">Publish</button>
+      </div>
+      <div class="modal-inner-trip_info">
+        <div class="card-trip_data">
+          <div class="card-img">
+            <img src="images/ico-clock.png" alt="">
+          </div>
+          <div class="card-body">
+            <p>7 Days</p>
+            <p class="light">Duration</p>
+          </div>
+        </div>
+        <div class="card-trip_data">
+          <div class="card-img">
+            <img src="images/ico-money.png" alt="">
+          </div>
+          <div class="card-body">
+            <p>$ 2,150</p>
+            <p class="light">Budget</p>
+          </div>
+        </div>
+        <div class="card-trip_data">
+          <div class="card-img">
+            <img src="images/ico-distance.png" alt="">
+          </div>
+          <div class="card-body">
+            <p>16K km</p>
+            <p class="light">Distance</p>
+          </div>
+        </div>
+        <div class="card-trip_data">
+          <div class="card-img">
+            <img src="images/ico-destinations.png" alt="">
+          </div>
+          <div class="card-body">
+            <p>12</p>
+            <p class="light">Destinations</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="direction">Trip plan name</label>
+            <div class="input-group input-group-edit">
+              <input type="text" class="form-control" id="direction" placeholder="">
+              @@include('../includes/buttons/btn-edit-sm.html', {
+                "tags": ""
+              })
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Trip plan description?</label>
+            <div class="input-group input-group-edit">
+              <textarea class="form-control" id="description" rows="3"></textarea>
+               @@include('../includes/buttons/btn-edit-sm.html', {
+                "tags": " "
+              })
+            </div>
+          </div>
+          <div class="form-group mb-0">
+            <label class="mb-0" for="privacy">Privacy options</label>
+            <p class="help-info">You decide who can see your trip plan, you can changed this at any time.</p>
+
+            @@include('../includes/privacy_select.html')   
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

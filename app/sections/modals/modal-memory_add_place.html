@@ -1,0 +1,227 @@
+<!-- Modal -->
+<div class="modal modal-sidebar fade" id="modal-memory_add_place" tabindex="-1" role="dialog" aria-labelledby="Edit Place" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="">Add your first place</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="form-row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="location">Location</label>
+              <div class="input-group input-dropdown">
+                <div class="input-group-img" style="background-image: url(images/img-location.png);">
+                  
+                </div> 
+                <input type="text" class="form-control" id="location" placeholder="Tokyo, city in Japan">
+              </div>
+              <div class="input-group-dropdown">
+                  <div class="input-group-dropdown-body writing">
+                    <ul class="list-search_result">
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                      <li><a href=""><b>Tokyo</b>, Japan</a></li>
+                    </ul>
+                  </div>
+                  @@include('../includes/transport_type.html')
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="location">Place name</label>
+              <div class="input-group input-dropdown">
+                <div class="input-group-img" style="">
+                  
+                </div> 
+                <input type="text" class="form-control" id="location" placeholder="Where did you go next?">
+              </div>
+              <div class="input-group-dropdown">
+                  <div class="input-group-dropdown-body select-place">
+                    <div class="map-select-place">
+                      <img class="mb-3" src="images/ico-hand.svg" alt="">
+                      <p>Click the map to select a place</p>
+                    </div>
+                      
+                  </div>
+                  @@include('../includes/transport_type.html')
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="col-12"><label for="location">When did you arrive?</label></div>
+          <div class="col-6">
+            <div class="form-group">
+              <div class="input-group input-group-time">
+                <div class="input-group-img" style="background-image: url(images/ico-calendar.svg);">
+                </div> 
+                <p class="input-name">Date</p>
+                <input type="text" class="form-control" id="" placeholder="19 October 2017">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <div class="input-group input-group-time">
+                <div class="input-group-img" style="background-image: url(images/ico-clock.svg);">
+                </div> 
+                <p class="input-name">Time</p>
+                <input type="text" class="form-control" id="" placeholder="9:20 PM">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="form-row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="">Stayed here for</label>
+              <div class="form-row">
+                <div class="col-6">
+                  <div class="input-group input-group-couunter">
+                    <p class="input-name">Hours</p>
+                    <div class="counter">
+                      <span class="minus"></span>
+                      <input type="text" class="count" name="hours" value="1">
+                      <span class="plus"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="input-group input-group-couunter">
+                    <p class="input-name">Minutes</p>
+                    <div class="counter">
+                      <span class="minus"></span>
+                      <input type="text" class="count" name="minutes" value="1">
+                      <span class="plus"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label class="d-flex" for="">
+                <span>How much you spent?</span>
+                <span class="label-sub ml-auto">Spent so far <b>$500</b></span>
+              </label> 
+              
+
+              <div class="form-row">
+                <div class="col-4">
+                  <div class="input-group">
+                    <input type="text" class="form-control form-control-amount" name="" placeholder="Amount">
+                     <div class="input-group-append">
+                      <span class="input-group-text" id="">$</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-8">
+                  <div class="group-radio-form group-radio-form-cards group-radio-form-amount d-flex justify-content-between w-100">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="amountMoney1" name="amountMoney" class="custom-control-input" checked="">
+                      <label class="custom-control-label" for="amountMoney1">
+                        50$
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="amountMoney2" name="amountMoney" class="custom-control-input">
+                      <label class="custom-control-label" for="amountMoney2">
+                        100$
+                      </label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="amountMoney3" name="amountMoney" class="custom-control-input">
+                      <label class="custom-control-label" for="amountMoney3">
+                        200$
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="">What is this place known for?</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="" placeholder="Food, Photography, History...">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="">Add media</label>
+              <!-- Swiper -->
+              <div class="swiper-media swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="img-upload"></button>
+                  </div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next">
+                  <img src="images/ico-chevron_right.svg" alt="">
+                </div>
+                <div class="swiper-button-prev">
+                  <img src="images/ico-chevron_left.svg" alt="">
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="button" class="btn btn-secondary btn-edit btn-edit-xl">
+              <img src="images/ico-edit.svg" class="mr-2" alt="">
+                Write your story
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-color-gray ml-auto">CANCEL</button>
+        <button type="button" class="btn btn-primary ml-4">ADD</button>
+      </div>
+    </div>
+  </div>
+</div>

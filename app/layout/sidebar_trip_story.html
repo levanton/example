@@ -1,0 +1,87 @@
+<div class="sidebar">
+	<div class="sidebar-holder">
+		@@include('../sections/planDays.html')
+		<div class="wrap-trip">
+			<div class="wrap-trip-holder">
+				<div class="trip">
+					<div class="trip-day">
+						<div class="trip-day_header">
+							<div class="trip-day_header-holder">
+								<span class="header-day">Day 1</span>
+								<span class="dot">•</span>
+								<span class="day_header-date">19 October 2019</span>
+							</div>
+							<div class="trip-day_header-controls">
+								<div class="customize-view">
+									<span class="title">View</span>
+									<div class="btn-group btn-group-toggle btn-group-view" data-toggle="buttons">
+										<label class="btn btn-toggle active">
+											<input type="radio" name="filterView" id="option1" autocomplete="off">
+											<svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16">
+											  <path class="cls-1" d="M529,179h17a1,1,0,0,1,1,1v2a1,1,0,0,1-1,1H529a1,1,0,0,1-1-1v-2A1,1,0,0,1,529,179Zm0-6h17a1,1,0,0,1,1,1v2a1,1,0,0,1-1,1H529a1,1,0,0,1-1-1v-2A1,1,0,0,1,529,173Zm0-6h17a1,1,0,0,1,1,1v2a1,1,0,0,1-1,1H529a1,1,0,0,1-1-1v-2A1,1,0,0,1,529,167Z" fill="#e6e6e6" transform="translate(-528 -167)"/>
+											</svg>
+										</label>
+										<label class="btn btn-toggle">
+											<input type="radio" name="filterView" id="option2" autocomplete="off"> 
+											<svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16">
+											  <path class="cls-1" d="M567,167h17a1,1,0,0,1,1,1v10a1,1,0,0,1-1,1H567a1,1,0,0,1-1-1V168A1,1,0,0,1,567,167Zm-1,14h19v2H566v-2Z" fill="#e6e6e6" transform="translate(-566 -167)"/>
+											</svg>
+										</label>
+									</div>
+									<button class="btn btn-small btn-view">
+										<img src="images/ico-full_view.svg" alt="">
+										FULL VIEW
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="trip-day_body">
+						 	<div class="has-icon-text has-icon-circle">
+							    <span class="image" style="background-image: url(images/ico-flag.svg);"></span>
+							    <span class="text">Start</span>
+							</div>		
+
+							@@include('../sections/sidebar/trip_info-memory_plan-open.html')
+
+							<div class="has-icon-text">
+							    <span class="image" style="background-image: url(images/ico-plane.svg);"></span>
+							    <span class="text"></span>
+							</div>
+
+							@@include('../sections/sidebar/trip_info-memory_plan-open.html')
+							
+						</div>
+
+						<div class="trip-day">
+							<div class="trip-day_header">
+								<div class="trip-day_header-holder">
+									<span class="header-day">Day 1</span>
+									<span class="dot">•</span>
+									<span class="day_header-date">19 October 2019</span>
+								</div>
+							</div>
+							<div class="trip-day_body">
+
+								@@include('../sections/sidebar/trip_info-memory_plan-open.html')
+
+								<div class="has-icon-text has-icon-circle">
+								    <span class="image" style="background-image: url(../images/ico-flag.svg);"></span>
+								    <span class="text">Finish</span>
+								</div>
+							</div>
+						</div>
+						
+					</div>					
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- modals sidebar -->
+	@@include('../sections/modals/modal-add_place.html')
+	@@include('../sections/modals/modal-edit_place.html')
+
+</div>

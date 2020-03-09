@@ -1,0 +1,118 @@
+<div class="sidebar">
+	<div class="sidebar-holder">
+		@@include('../sections/planDays.html')
+		<div class="wrap-trip">
+			<div class="wrap-trip-holder">
+				<div class="trip">
+					<div class="trip-day">
+						<div class="trip-day_header">
+							<div class="trip-day_header-holder">
+								<span class="header-day">Day 1</span>
+								<span class="dot">•</span>
+								<span class="day_header-date">19 October 2019</span>
+							</div>
+						</div>
+						<div class="trip-day_body">
+							@@include('../sections/includes/buttons/btn-add_place.html')
+
+							<div class="has-icon-text">
+							    <span class="image" style="background-image: url(../images/ico-plane.svg);"></span>
+							    <span class="text"></span>
+							</div>
+
+							@@include('../sections/sidebar/trip_info.html', {
+								"class": "editing",
+								"editText": "Editing..."
+							})
+							
+							@@include('../sections/includes/buttons/btn-add_place.html')
+							
+							<div class="has-icon-text">
+							    <span class="image" style="background-image: url(../images/ico-plane.svg);"></span>
+							    <span class="text"></span>
+							</div>
+
+							@@include('../sections/sidebar/trip_info.html', {
+								"class": " ",
+								"editText": "Edited 2 hours ago"
+							})
+
+							@@include('../sections/includes/buttons/btn-add_place.html')
+						</div>
+					</div>
+					<div class="trip-day">
+						<div class="trip-day_header devider">
+							<div class="trip-day_header-holder">
+								<span class="header-day">Day 1</span>
+								<span class="dot">•</span>
+								<span class="day_header-date">19 October 2019</span>
+							</div>
+						</div>
+						<div class="trip-day_body">
+
+							@@include('../sections/includes/buttons/btn-add_place.html')
+							
+							<div class="has-icon-text">
+							    <span class="image" style="background-image: url(../images/ico-plane.svg);"></span>
+							    <span class="text"></span>
+							</div>
+
+							@@include('../sections/sidebar/trip_info.html', {
+								"class": " ",
+								"editText": "Edited 2 hours ago"
+							})
+
+							@@include('../sections/includes/buttons/btn-add_place.html')
+							
+							<div class="has-icon-text">
+							    <span class="image" style="background-image: url(../images/ico-plane.svg);"></span>
+							    <span class="text"></span>
+							</div>
+							
+							@@include('../sections/sidebar/trip_info.html', {
+								"class": " ",
+								"editText": " "
+							})
+							
+							@@include('../sections/includes/buttons/btn-add_place.html')
+
+						</div>
+					</div>
+					<div class="trip-day">
+						<div class="trip-day_header devider">
+							<div class="trip-day_header-holder">
+								<span class="header-day">Day 1</span>
+								<span class="dot">•</span>
+								<span class="day_header-date">19 October 2019</span>
+							</div>
+						</div>
+						<div class="trip-day_body">
+
+							@@include('../sections/includes/buttons/btn-add_place.html')
+
+							@@include('../sections/sidebar/trip_info.html', {
+								"class": " ",
+								"editText": "Edited 2 hours ago"
+							})
+
+							@@include('../sections/includes/buttons/btn-add_place.html')
+
+							@@include('../sections/sidebar/trip_info.html', {
+								"class": " ",
+								"editText": " "
+							})
+							
+							@@include('../sections/includes/buttons/btn-add_place.html')
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- modals sidebar -->
+	@@include('../sections/modals/modal-add_place.html')
+	@@include('../sections/modals/modal-edit_place.html')
+
+</div>
