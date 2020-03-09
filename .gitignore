@@ -1,6 +1,7 @@
+echo .DS_Store
+
 node_modules
 .tmp
 bower_components
 test/bower_components
 .idea
-echo .DS_Store
